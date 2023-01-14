@@ -1,0 +1,12 @@
+[submodule "Vender/spinningup"]
+	path = Vender/spinningup
+	url = git@github.com:Masarity/spinningup.git
+[submodule "Vender/hebi_description"]
+	path = Vender/hebi_description
+	url = git@github.com:HebiRobotics/hebi_description.git
+[submodule "Vender/gymnasium"]
+	path = Vender/gymnasium
+	url = git@github.com:Farama-Foundation/Gymnasium.git
+[submodule "Vender/odio_urdf"]
+	path = Vender/odio_urdf
+	url = git@github.com:hauptmech/odio_urdf.git
