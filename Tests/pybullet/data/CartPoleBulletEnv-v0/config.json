@@ -1,0 +1,44 @@
+{
+    "ac_kwargs":	{
+        "activation":	"ReLU",
+        "hidden_sizes":	[
+            64,
+            64
+        ]
+    },
+    "actor_critic":	"MLPActorCritic",
+    "clip_ratio":	0.2,
+    "env_fn":	"<function <lambda> at 0x7f233a45a8c8>",
+    "epochs":	50,
+    "exp_name":	"CartPoleBulletEnv",
+    "gamma":	0.99,
+    "lam":	0.97,
+    "logger":	{
+        "<spinup.utils.logx.EpochLogger object at 0x7f233a459f98>":	{
+            "epoch_dict":	{},
+            "exp_name":	"CartPoleBulletEnv",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"/home/masa/learning/rl/undergraduate/robot_design_sythesis/Tests/pybullet/data/CartPoleBulletEnv-v0",
+            "output_file":	{
+                "<_io.TextIOWrapper name='/home/masa/learning/rl/undergraduate/robot_design_sythesis/Tests/pybullet/data/CartPoleBulletEnv-v0/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"CartPoleBulletEnv",
+        "output_dir":	"/home/masa/learning/rl/undergraduate/robot_design_sythesis/Tests/pybullet/data/CartPoleBulletEnv-v0"
+    },
+    "max_ep_len":	1000,
+    "pi_lr":	0.0003,
+    "save_freq":	10,
+    "seed":	0,
+    "steps_per_epoch":	2000,
+    "target_kl":	0.01,
+    "train_pi_iters":	80,
+    "train_v_iters":	80,
+    "vf_lr":	0.001
+}
