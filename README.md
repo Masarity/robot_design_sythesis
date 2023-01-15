@@ -4,7 +4,11 @@
 
 ## 简介
 
-TODO：描述一下项目
+### 测试部分
+
+- spinning up 算法库基本使用，兼容pybullet做了小调整
+- 创建自定义的pybullet环境
+- 测试urdf生成模块化机械臂
 
 ## 外部库
 

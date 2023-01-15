@@ -41,17 +41,19 @@ class SimpleDrivingEnv(gym.Env):
         # Compute reward as L2 change in distance to goal
         dist_to_goal = math.sqrt(((car_ob[0] - self.goal[0]) ** 2 +
                                   (car_ob[1] - self.goal[1]) ** 2))
-        reward = max(self.prev_dist_to_goal - dist_to_goal, 0)
+        reward = self.prev_dist_to_goal - dist_to_goal
+        # reward = max(math.sqrt(math.fabs(self.prev_dist_to_goal - dist_to_goal)), 0)
         self.prev_dist_to_goal = dist_to_goal
 
         # Done by running off boundaries
         if (car_ob[0] >= 10 or car_ob[0] <= -10 or
                 car_ob[1] >= 10 or car_ob[1] <= -10):
             self.done = True
+            reward = -5000
         # Done by reaching goal
         elif dist_to_goal < 1:
             self.done = True
-            reward = 50
+            reward = 5000
 
         ob = np.array(car_ob + self.goal, dtype=np.float32)
         return ob, reward, self.done, dict()
