@@ -281,5 +281,59 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0035384375000000003" iyz="0.0" izz="0.0035384375000000003" />
     </inertial>
   </link>
+  <gazebo reference="elbow_wrist/INPUT_INTERFACE">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <joint name="elbow_wrist/OUTPUT_JOINT" type="fixed">
+    <parent link="elbow_wrist/INPUT_INTERFACE" />
+    <child link="Arm/J4_wrist/INPUT_INTERFACE" />
+    <origin rpy="0 0 0" xyz="0.325 -0.0 0.04" />
+  </joint>
+  <link name="Arm/J4_wrist/INPUT_INTERFACE">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/X5.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="red">
+        <color rgba=".82 0.06 0.06 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/X5.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.315" />
+      <origin rpy="0 0 0" xyz="-0.0142 -0.0031 0.0165" />
+      <inertia ixx="0.00015" ixy="0.0000341" ixz="0.0000118" iyy="0.000255" iyz="0.00000229" izz="0.000350" />
+    </inertial>
+  </link>
+  <gazebo reference="Arm/J4_wrist/INPUT_INTERFACE">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <joint name="Arm/J4_wrist" type="continuous">
+    <parent link="Arm/J4_wrist/INPUT_INTERFACE" />
+    <child link="end_effector/INPUT_INTERFACE" />
+    <origin rpy="0 0 0" xyz="0 0 0.031" />
+    <axis xyz="0 0 1" />
+    <limit effort="2.5" velocity="9.425" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+  <link name="end_effector/INPUT_INTERFACE">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.0005" />
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+  </link>
 
 </robot>
