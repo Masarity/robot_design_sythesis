@@ -1,6 +1,7 @@
 [submodule "Vender/spinningup"]
 	path = Vender/spinningup
 	url = git@github.com:Masarity/spinningup.git
+	branch = masarity-dev
 [submodule "Vender/hebi_description"]
 	path = Vender/hebi_description
 	url = git@github.com:HebiRobotics/hebi_description.git
