@@ -10,7 +10,9 @@ import gym
 
 dir = os.path.dirname(os.path.realpath(__file__))
 
-envName = 'LunarLander-v2'
+envName = 'Acrobot-v1'
+# envName = 'BipedalWalker-v3'
+# envName = 'LunarLander-v2'
 # envName = 'CartPole-v1'
 # envName = 'SimpleDriving-v0'
 # envName = 'CartPoleBulletEnv-v1'
@@ -29,9 +31,9 @@ dqn(
   env_fn=env_fn, 
   ac_kwargs=ac_kwargs, 
   seed=0,
-  steps_per_epoch=1000, 
-  epochs=10000, 
-  replay_size=int(1e7),
+  steps_per_epoch=500, 
+  epochs=6000, 
+  replay_size=int(1e6),
   gamma=0.99,
   epsilon_start=1,
   epsilon_decay=1e-5,
@@ -39,8 +41,8 @@ dqn(
   q_lr=1e-4,
   batch_size=int(1000),
   start_steps=10000,
-  max_ep_len=1000,
+  max_ep_len=500,
   logger_kwargs=logger_kwargs,
-  update_freq=10000,
+  update_freq=5000,
   save_freq=int(1)
   )
